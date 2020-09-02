@@ -9,9 +9,10 @@ class ApplicationController < ActionController::API
 
 		render json: { error: "not signed in" }, status: :unauthorized
 	end
-	
+
 	def configure_permitted_parameters
 		devise_parameter_sanitizer.permit(:sign_up, keys: [:full_name])
+		devise_parameter_sanitizer.permit(:accept_invitation, keys: [:full_name, :admin])
 	end
 
 	def auth

@@ -7,5 +7,5 @@ Rails.application.routes.draw do
 	get "/auth", to: 'application#auth'
 
 	resources :accounts, only: [:create]
-  resources :users, only: [:index]
+  resources :users, only: [:index, :update, :destroy]
 end
