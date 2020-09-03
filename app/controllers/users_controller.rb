@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :check_admin
+
   def index
     @users = current_user.account.users
 

@@ -18,4 +18,14 @@ class ApplicationController < ActionController::API
 	def auth
 		render json: current_user
 	end
+
+	def current_account
+		current_user.account
+	end
+
+	def check_admin
+    return if current_user.admin
+
+    render json: { error: "not authorized" }, status: :unprocessable_entity
+  end
 end
