@@ -13,6 +13,7 @@ class ApplicationController < ActionController::API
 	def configure_permitted_parameters
 		devise_parameter_sanitizer.permit(:sign_up, keys: [:full_name])
 		devise_parameter_sanitizer.permit(:accept_invitation, keys: [:full_name, :admin])
+		devise_parameter_sanitizer.permit(:account_update, keys: [:full_name])
 	end
 
 	def auth

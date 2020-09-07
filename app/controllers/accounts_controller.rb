@@ -1,5 +1,5 @@
 class AccountsController < ApplicationController
-	before_action :check_admin
+	before_action :check_admin, only: [:update]
 
 	def create
 		@account = Account.new(account_params)
