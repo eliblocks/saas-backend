@@ -4,6 +4,7 @@ class AccountsController < ApplicationController
 	def create
 		@account = Account.new(account_params)
 		@account.plan = 'free'
+		@account.users.first.admin = true
 
 		if @account.save
 			render json: @account
