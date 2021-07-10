@@ -10,5 +10,4 @@ Rails.application.routes.draw do
 
 	resources :accounts, only: [:create]
   resources :users, only: [:index, :update, :destroy]
-  resources :tasks, only: [:index, :create, :update, :destroy]
 end
