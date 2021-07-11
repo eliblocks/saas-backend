@@ -61,7 +61,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'https://nostalgic-tesla-951e56.netlify.app' }
 
   ActionMailer::Base.smtp_settings = {
-    user_name: 'apikey',
+    user_name: 'genericsaas',
     password: Rails.application.credentials.sendgrid_secret,
     domain: 'heroku.com',
     address: 'smtp.sendgrid.net',
